@@ -355,7 +355,7 @@ footer .footer_info .bar {
 /* 모바일 start */
 @media screen and (max-width:768px) {
 body {
-    border: 5px solid lime;
+    /* border: 5px solid lime; */ /* 스크린 크기 확인용 */
 }
 header {
     padding: 0;
@@ -506,7 +506,7 @@ footer .footer_info .first_bar {
 /* 반응형 데스크탑 start */
 @media screen and (min-width:769px) and (max-width: 1280px) {
 body {
-    border: 5px solid red;
+    /* border: 5px solid red; */ /* 스크린 크기 확인용 */
 }
 header .inner .m_menu {
     display: none;
@@ -633,7 +633,7 @@ footer .footer_info span {
 /* 고정형 데스크탑 start */
 @media screen and (min-width:1281px) {
 body {
-    border: 5px solid blue;
+    /* border: 5px solid blue; */ /* 스크린 크기 확인용 */
 }
 header .inner .m_menu {
     display: none;
