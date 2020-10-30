@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>DESIGN SAMSUNG : 강보현</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="all" href="css/common.css" />
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto:300,400,500|Open+Sans:400,600&display=swap" rel="stylesheet">
+	<style></style>
+	<script></script>
+</head>
+<body>
+	<div class="wrap">
+		<header> <!-- 헤더 start -->
+			<div class="inner">
+				<h1 class="logo">
+					<a href="#">
+						<img src="images/header_logo.png" alt="디자인 삼성">
+					</a>
+				</h1>
+				<h2 class="slogan">
+					<img src="images/header_h2_slogan_d.png" alt="Be Bold. Resonate with Soul.">
+				</h2>
+				<ul class="nav">
+					<li><a href="#">WE DESIGN</a></li>
+					<li><a href="#">WE DISCOVER</a></li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">NEWS</a></li>
+				</ul>
+				<ul class="util">
+					<li class="search">
+						<a href="#"><img src="images/header_icon_search.png" alt="검색창"></a>
+						<div class="search_box">
+							<input type="text">
+							<a href="#">
+								<span>SEARCH</span>
+							</a>
+						</div>
+					</li>
+					<li class="lang">
+						<a href="#"><img src="images/header_icon_lang.png" alt="언어 선택"></a>
+						<ul class="lang_list">
+							<li><a class="kr" href="#">KR</a></li>
+							<li><a class="en" href="#">EN</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="m_menu" href="#">
+					<a href="#"><img src="images/header_icon_menu.png" alt="메뉴"></a>					
+					<h2 class="slogan_m" style="display: none;">
+						<img src="images/header_h2_slogan_m.png" alt="Be Bold. Resonate with Soul.">
+					</h2>
+				</div>
+				<a class="close_btn" href="#" style="display: none;""></a>
+			</div>
+		</header> <!-- 헤더 end -->
+		<script>
+
+		
+
+		var targetList = document.querySelector ('header > .inner > .util > .lang');
+		var branchBtn = document.querySelector ('header > .inner > .util > .lang > a');
+
+		branchBtn.addEventListener('click', function(e){
+			e.preventDefault()
+			if (targetList.className === 'lang on'){
+				targetList.className = 'lang'
+			} else {
+				targetList.className = 'lang on'
+			}
+		});
+
+		var targetBox = document.querySelector ('header > .inner > .util > .search');
+		var searchBtn = document.querySelector ('header > .inner > .util > .search > a');
+
+		searchBtn.addEventListener('click', function(e){
+			e.preventDefault()
+			if (targetBox.className === 'search on'){
+				targetBox.className = 'search'
+			} else {
+				targetBox.className = 'search on'
+			}
+		});
+		</script>
+		<main> <!-- 메인 start -->
+			<div class="visual">
+				<a href="#">
+					<picture>
+						<source media="(max-width: 768px)" srcset="images/visual_img_m.jpg">
+						<source media="(min-width: 769px)" srcset="images/visual_img.jpg">
+						<img src="images/visual_img.jpg" alt="2020 삼성 QLED 8K 디자인 스토리">	
+					</picture>
+				</a>
+				<div class="content_info">
+					<h3>Nothing in Between</h3>
+					<strong>2020 삼성 QLED 8K 디자인 스토리</strong>
+					<em>Mar 24, 2020</em>
+				</div>
+			</div>
+			<ul class="main_contents">
+				<li>
+					<a href="#"><img src="images/main_contents_img1.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Upon the Horizon of Innovation</h4>
+						<strong>삼성 갤럭시 S20의 세 가지 시선</strong>
+						<em>Feb 25, 2020</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img2.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>A Brand New Vibe</h4>
+						<strong>삼성 갤럭시 Z 플립, 새로운 서사를 피우다</strong>
+						<em>Feb 12, 2020</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img3.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>2020 iF 디자인어워드</h4>
+						<strong>News</strong>
+						<em>Feb 12, 2020</em>
+					</div>
+
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img4.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Step Back to the Essence of Laundry</h4>
+						<strong>삼성 그랑데 AI 디자인스토리</strong>
+						<em>Jan 29, 2020</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img5.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Thoughts for a New Lifestyle</h4>
+						<strong>우리가 그리는, 당신이 경험할 내일</strong>
+						<em>Dec 24, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img6.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Design Awards</h4>
+						<strong>Awarded Samsung Design</strong>
+						<em>Dec 12, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img7.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Solidity on Another Level</h4>
+						<strong>갤럭시 북 플렉스와 갤럭시 북 이온의 새로운 디자인 랭귀지</strong>
+						<em>Nov 21, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img8.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>A New Scene for Your Dining Lifestyle</h4>
+						<strong>삼성 인덕션 더 플레이트 디자인스토리</strong>
+						<em>Nov 05, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img9.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Value Seekers Around the World</h4>
+						<strong>세계 속 삼성전자 디자이너로 살아가기</strong>
+						<em>Oct 17, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img10.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Think Local, Design Global</h4>
+						<strong>각국 현지에서 삼성전자 디자인이 만들어 가는 글로벌 디자인</strong>
+						<em>Oct 01, 2019</em>
+					</div>
+
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img11.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Design out of the Box</h4>
+						<strong>삼성전자 디자인이 만들어 온 어제의 내일</strong>
+						<em>Sep 17, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img12.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>The Power Is in Your Hands</h4>
+						<strong>삼성 갤럭시 노트10이 말하는 오늘의 디자인</strong>
+						<em>Aug 08, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img13.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Now Is Your Time</h4>
+						<strong>삼성 갤럭시 워치 액티브2가 말하는 오늘의 디자인</strong>
+						<em>Aug 08, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img14.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>2019 삼성전자 디자인 오픈 캠퍼스</h4>
+						<strong>News</strong>
+						<em>Aug 08, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img15.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Keeping Children Safe and Happy</h4>
+						<strong>삼성전자, 아이와의 행복한 공존을 꿈꾸다</strong>
+						<em>Jul 23, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img16.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>The History of Samsung Design</h4>
+						<strong>삼성전자 디자인의 발자취를 돌아보다</strong>
+						<em>Jul 11, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img17.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Everyone’s Taste Counts</h4>
+						<strong>삼성 BESPOKE 냉장고 디자인스토리</strong>
+						<em>Jun 27, 2019</em>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="images/main_contents_img18.jpg" alt=""></a>
+					<div class="content_info">
+						<h4>Samsung Design Membership</h4>
+						<strong>삼성디자인멤버십을 소개합니다</strong>
+						<em>May 28, 2019</em>
+					</div>
+				</li>
+			</ul>
+			<div class="more_btn">
+				<button>
+					<span class="line"></span>
+					<span class="txt">MORE</span>
+				</button>
+			</div>
+		</main> <!-- 메인 end -->
+		<footer> <!-- 푸터 start -->
+			<div class="top_btn">
+				<button></button>
+			</div>
+			<div class="footer_info">
+				<a class="samsung" href="#">
+					<img src="images/footer_logo_samsung.png" alt="삼성닷컴 사이트 연결">
+				</a>
+				<span class="copyright">© 2014-2020 SAMSUNG All Rights Reserved.</span>
+				<ul class="contact">
+					<li>
+						<span class="bar first_bar">|</span>
+						<a href="#">
+							<span>이메일 문의</span>
+						</a>
+					</li>
+					</li>
+					<li>
+						<span class="bar">|</span>
+						<a href="#">
+							<span>개인정보처리방침</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</footer> <!-- 푸터 end -->
+	</div>
+	
+</body>
+</html>
