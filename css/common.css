@@ -1,0 +1,641 @@
+@charset "utf-8";
+/* reset */
+body {
+	font:normal 16px 'Roboto', 'Noto Sans KR', sans-serif;
+	line-height:1.2;
+	color:black;
+	margin:0;
+	padding:0;
+}
+select:focus, button:focus, textarea:focus, input:focus {
+	outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {font-size:1em; font-weight: 500;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li {list-style:none;}
+a {color: black; text-decoration:none;}
+strong {font-weight: normal;}
+em {font-style: normal;}
+img {vertical-align: top;}
+
+/* layout */
+.wrap {width:100%;}
+header {
+	padding: 19px 3.75% 0; /* 72/1920 */
+    height: auto;
+}
+main {}
+footer {
+    padding: 23px 3.75%; /* 72/1920 */
+}
+
+/* common contents */
+/* BFC */
+header .inner::after , main .main_contents::after, header .inner .util::after {
+    content: ''; display: block; clear: both; 
+} /* BFC */
+h3, h4, strong, em {
+    word-spacing: -2px;
+}
+main em {
+    font-size: 12px;
+    color: #666666;
+    font-weight: 300;
+}
+.wrap button {
+    text-rendering: unset;
+    color: black;
+    font: inherit;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+/* header */
+header .inner {
+    position: relative;
+}
+header .inner .logo{
+    float: left;
+}
+header .inner .logo img {
+    width: 230px;
+    height: 31px;
+}
+
+header .inner .slogan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+header .inner .slogan img {
+    width: 368px;
+    height: 24px;
+}
+
+header .inner .nav {
+    margin: 31px 0 20px 0;
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+}
+header .inner .nav.on {
+    margin-top: -27px;
+    z-index: 10;
+}
+header .inner .nav li {
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+}
+header .inner .nav li + li {
+    margin-left: 61px;
+}
+header .inner .nav li > a::after {
+	content: '';
+	display: block;
+	border-bottom: 2px solid black;
+	transform: scaleX(0);
+    transition: all ease 0.3s;
+}
+header .inner .nav li:hover > a::after {
+	transform: scaleX(1);
+}
+
+header .inner .util {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+header .inner .util .search {
+    float: left;
+}
+header .inner .util .search .search_box {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 260px;
+}
+header .inner .util .search .search_box::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid black;
+    width: 100%;
+    height: 7px;
+}
+header .inner .util .search .search_box input {
+    color: black;
+    display: inline-block;
+    background-color: white;
+    font-size: 18px;
+    width: 180px;
+    border: none;
+    float: left;
+}
+header .inner .util .search .search_box a > span {
+    font-weight: 500;
+    display: inline-block;
+    padding-left: 11px;
+}
+header .inner .util .search.on > .search_box {
+    display:block;
+    margin-top: 20px;
+}
+header .inner .util .search > .search_box {display:none}
+
+header .inner .util .lang {
+    float: left;
+    margin-left: 25px;
+}
+header .inner .util .lang img {
+    width: 18px;
+    height: 18px;
+}
+header .inner .util .lang > a::after {
+    content: '';
+    display: inline-block;
+    background: url('../images/header_icon_arrow.png') no-repeat;
+    transform: rotate( 0deg );
+    transition: all ease 0.3s;
+    background-size: 100% auto;
+    width: 5px;
+    height: 3px;
+    margin: 0 0 5px 10px;
+}
+header .inner .util .lang.on > a::after {
+    content: '';
+    display: inline-block;
+    background: url('../images/header_icon_arrow.png') no-repeat;
+    transform: rotate( 180deg );
+    transition: all ease 0.3s;
+    background-size: 100% auto;
+    width: 5px;
+    height: 3px;
+    margin: 0 0 5px 10px;
+}
+header .inner .util .lang .lang_list {
+    margin-top: 25px;
+}
+header .inner .util .lang .lang_list li + li {
+    margin-top: 15px;
+}
+header .inner .util .lang .lang_list li a {
+    font-weight: 500;
+}
+header .inner .util .lang .lang_list li a.kr {
+    border-bottom: 2px solid black;
+}
+header .inner .util .lang .lang_list li a.en {
+    color: #666666;
+}
+header .inner .util .lang.on > .lang_list {display:block}
+header .inner .util .lang > .lang_list {display:none}
+
+header .inner .close_btn {
+    position: relative;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 24px;
+    height: 24px;
+}
+header .inner .close_btn::before, header .inner .close_btn::after {
+    position:absolute;
+    top:10px;
+    content: '';
+    display: block;
+    background-color:black;
+    width: 22px;
+    height: 2px;
+}
+header .inner .close_btn::before {
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+header .inner .close_btn::after {
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+
+
+/* main */
+main .visual {
+    padding: 0;
+}
+main .visual img {
+    width: 100%;
+}
+main .visual .content_info {
+    position: relative;
+    padding: 30px 3.75% 0; /* 72/1920 */
+    margin-left: 1.302083%; /* 25/1920 */
+}
+main .visual .content_info h3 {
+    font-size: 47px;
+    margin-bottom: 15px;
+}
+main .visual .content_info strong {
+    font-size: 26px;
+}
+main .visual .content_info em {
+    position: absolute;
+    top: 34px;
+    right: 4.84375%; /* 93/1920 */
+}
+main .main_contents {
+    margin-top: 117px;
+    padding: 0 3.75%; /* 72/1920 */ 
+    font-size: 0;
+}
+main .main_contents li {
+    display: inline-block;
+    width: 32.478632%; /* 570/1755 */
+    height: auto;
+    padding-bottom: 80px;
+    vertical-align: top;
+}
+main .main_contents li + li {
+    margin-left: 1.196581%; /* 21/1755 */
+}
+main .main_contents li:nth-child(3n+1) {
+    margin-left: 0%;
+}
+main .main_contents img {
+    width: 100%;
+}
+main .main_contents .content_info > * {
+    display: block;
+}
+main .main_contents .content_info h4 {
+    font-size: 30px;
+    padding: 27px 0 0 4.210526%; /* 24/570 */
+}
+main .main_contents .content_info strong{
+    font-size: 18px;
+    padding: 13px 0 0 4.210526%; /* 24/570 */
+}
+main .main_contents .content_info em {
+    padding: 14px 0 0 4.210526%; /* 24/570 */
+}
+main .more_btn {
+    padding: 0 46.041667% 60px; /* 884/1920 */
+}
+main .more_btn button {
+    width: 100%;
+    height: auto;
+}
+main .more_btn button .line{
+    display: block;
+    font-size: 25px;
+}
+main .more_btn button .line::after {
+    content: '';
+    border-right: 1px solid black ;
+}
+main .more_btn button .txt {
+    font-size: 18px;
+    display: block;
+    margin-top: 7px;
+}
+
+
+/* footer */
+footer .top_btn button {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0 1.197917% 1.197917% 0 ; /* 23/1920 */
+    width: 70px; /* 70/1920 */
+    height: 70px; /* 70/1920 */
+    background: url('../images/footer_icon_top.png') no-repeat 50% 50%;
+    background-size: 8px 30px;
+    background-color: #f9f9f9;
+}
+
+footer .footer_info .samsung {
+    margin-right: 14px;
+}
+footer .footer_info .samsung img {
+    vertical-align: middle;
+}
+footer .footer_info .copyright {
+    display: inline-block;
+    font-weight: 500;
+}
+footer .footer_info .contact {
+    display: inline-block;
+    font-size: 0;
+    height: 14px;
+}
+footer .footer_info .contact li {
+    display: inline-block;
+}
+footer .footer_info .contact li span {
+    text-decoration: underline;
+}
+footer .footer_info span {
+    font-size: 14px;
+    color: #888888;
+}
+footer .footer_info .bar {
+    padding: 0 8px;
+}
+
+/* 모바일 start */
+@media screen and (max-width:768px) {
+body {
+    border: 5px solid lime;
+}
+header {
+    padding: 0;
+}
+footer {
+}
+h3, h4, strong {
+    word-spacing: -5px;
+}
+header .inner {
+    width: 100%;
+    height: 13.020833vw; /* 100/768 */
+}
+header .inner .logo{
+    position: absolute;
+    top: 4.036458vw; /* 31/768 */
+    left: 3.90625vw; /* 30/768 */
+}
+header .inner .logo img {
+    width: 42.1875vw; /* 324/768 */
+    height: 5.598958vw; /* 43/768 */
+}
+header .inner .util .search a {
+    position: absolute;
+    top: 3.906250vw; /* 30/768 */
+    right: 14.973958vw; /* 115/768 */
+    background: url('../images/header_icon_search_m.png') no-repeat 0 50%;
+    background-size: 100% auto;
+    display: block;
+    width: 4.817708vw; /* 37/768 */
+    height: 4.817708vw; /* 37/768 */
+}
+header .inner .m_menu {
+    position: absolute;
+    top: 4.817708vw; /* 37/768 */
+    right: 4.036458vw; /* 31/768 */
+    width: 4.817708vw; /* 37/768 */
+    height: 4.817708vw; /* 37/768 */
+}
+header .inner .m_menu a img {
+    width: 100%;
+    height: auto;
+}
+header .inner .slogan {
+    display: none;
+}
+header .inner .nav {
+    display: none;
+}
+header .inner .util .search img {
+    display: none;
+}
+header .inner .util .lang {
+    display: none;
+}
+main .visual .content_info {
+    position: static;
+    padding: 8.854167vw 3.515625vw 0; /* 68&27/768 */
+    margin-left: 2.734375vw; /* 21/768 */
+}
+main .visual .content_info h3 {
+    font-size: 10.677083vw; /* 82/768 */
+    margin-bottom: 3.645833vw; /* 28/768 */
+}
+main .visual .content_info strong {
+    font-size: 4.817708vw; /* 37/768 */
+}
+main .visual .content_info em {
+    position: static;
+    display: block;
+    font-size: 3.776042vw; /* 29/768 */
+    margin-top: 5.078125vw; /* 39/768 */
+}
+main .main_contents {
+    margin-top: 26.041667vw; /* 200/768 */
+    padding: 0 3.515625vw; /* 27/768 */ 
+}
+main .main_contents li {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 26.041667vw; /* 200/768 */
+}
+main .main_contents li + li {
+    margin-left: 0;
+}
+main .main_contents .content_info h4 {
+    font-size: 7.421875vw; /* 57/768 */
+    padding: 6.901042vw 0 0 3.90625vw; /* 53&30/768 */
+}
+main .main_contents .content_info strong{
+    font-size: 4.817708vw; /* 37/768 */
+    padding: 2.604167vw 0 0 3.90625vw; /* 20&30/768 */
+}
+main .main_contents .content_info em {
+    font-size: 3.776042vw; /* 29/768 */
+    padding: 2.604167vw 0 0 3.90625vw; /* 20&30/768 */
+}
+main .more_btn {
+    padding: 0 37.760417vw 19.921875vw; /* 290&153/768 */
+}
+main .more_btn button .line{
+    font-size: 4.557292vw; /* 35/768 */
+}
+main .more_btn button .txt {
+    font-size: 3.776042vw; /* 29/768 */
+    margin-top: 2.604167vw; /* 20/768 */
+}
+footer .top_btn button {
+    margin: 0 2.994792vw 2.994792vw 0 ; /* 23/768 */
+    width: 11.979167vw; /* 92/768 */
+    height: 11.979167vw; /* 92/768 */
+    background: url('../images/footer_icon_top.png') no-repeat 50% 50%;
+    background-size: 1.041667vw 5.208333vw; /* 10&40/768 */
+    background-color: #f9f9f9;
+}
+footer .footer_info .samsung {
+    margin-right: 0;
+}
+footer .footer_info .samsung img {
+    width: 17.708333vw; /* 136/768 */
+    height: 2.734375vw; /* 21/768 */
+}
+footer .footer_info .copyright {
+    display: block;
+    margin-top: 3.125vw; /* 24/768 */
+    font-size: 3.125vw; /* 24/768 */
+}
+footer .footer_info .contact {
+    display: block;
+    font-size: unset;
+    height: auto;
+    margin-top: 2.864583vw; /* 22/768 */
+    word-spacing: -3px;
+}
+footer .footer_info .contact li span {
+    font-size: 2.864583vw; /* 22/768 */
+}
+footer .footer_info .bar {
+    padding: 0 8px;
+}
+footer .footer_info .first_bar {
+    display: none;
+}
+
+} /* 모바일 end */
+
+/* 반응형 데스크탑 start */
+@media screen and (min-width:769px) and (max-width: 1280px) {
+body {
+    border: 5px solid red;
+}
+header .inner .m_menu {
+    display: none;
+}
+header {
+	padding-top: 1.484375vw; /* 19/1280 */
+}
+footer {
+    padding: 1.796875vw 3.75%; /* 23/1280 */
+}
+header .inner .logo {
+    width: 17.968750vw; /* 230/1280 */
+}
+header .inner .logo img {
+    max-width: 100%;
+    height: auto;
+}
+header .inner .slogan img {
+    width: 28.75vw; /* 368/1280*/
+    height: auto;
+}
+header .inner .nav {
+    margin: 2.421875vw 0 1.5625vw 0; /* 31&20/1280 */
+}
+header .inner .nav li {
+    font-size: 1.40625vw; /* 18/1280 */
+}
+header .inner .nav li + li {
+    margin-left: 4.765625vw; /* 61/1280 */
+}
+header .inner .util .search img {
+    width: 1.5625vw; /* 20/1280 */
+}
+header .inner .util .search .search_box {
+    top: 2.34375vw; /* 30/1280 */
+    margin-top: 0.5vw !important;
+    width: 20.3125vw; /* 260/1280 */
+}
+header .inner .util .search .search_box::after {
+    height: 0.546875vw; /* 7/1280 */
+}
+header .inner .util .search .search_box input {
+    font-size: 1.40625vw; /* 18/1280 */
+    width: 14.0625vw; /* 180/1280 */
+}
+header .inner .util .search .search_box a > span {
+    font-size: 1.25vw; /* 16/1280 */
+    padding-left: 0.859375vw; /* 11/1280 */
+}
+header .inner .util .lang img {
+    width: 1.40625vw; /* 18/1280 */
+    height: auto; 
+}
+header .inner .util .lang > a::after, header .inner .util .lang.on > a::after {
+    width: 0.390625vw; /* 5/1280 */
+    height: 0.234375vw; /* 3/1280 */
+    margin: 0 0 0.78125vw 0.78125vw; /* 10/1280 */
+}
+header .inner .util .lang .lang_list {
+    margin-top: 1.9531px; /* 25/1280 */
+}
+header .inner .util .lang .lang_list li + li {
+    margin-top: 1.1719vw; /* 15/1280 */
+}
+header .inner .util .lang .lang_list li a {
+    font-size: 1.25vw; /* 16/1280 */
+}
+main .visual .content_info {
+    position: relative;
+    padding-top: 2.34375vw; /* 30/1280 */
+}
+main .visual .content_info h3 {
+    font-size: 3.671875vw; /* 47/1280 */
+    margin-bottom: 1.171875vw; /* 15/1280 */
+}
+main .visual .content_info strong {
+    font-size: 2.03125vw; /* 26/1280 */
+}
+main .visual .content_info em {
+    top: 2.65625vw; /* 34/1280 */
+}
+main em {
+    font-size: 0.9375vw; /* 12/1280 */
+}
+main .main_contents {
+    margin-top: 9.140625vw; /* 117/1280 */
+}
+main .main_contents .content_info h4 {
+    font-size: 2.34375vw; /* 30/1280 */
+}
+main .main_contents .content_info strong{
+    font-size: 1.40625vw; /* 18/1280 */
+}
+main .main_contents li {
+    padding-bottom: 6.25vw; /* 80/1280 */
+}
+main .more_btn {
+    padding-bottom: 4.6875vw; /* 60/1280 */
+}
+main .more_btn button .line{
+    font-size: 1.953125vw; /* 25/1280 */
+}
+main .more_btn button .txt {
+    font-size: 1.40625vw; /* 18/1280 */
+    margin-top: 0.546875vw; /* 7/1280 */
+}
+footer .top_btn button {
+    width: 5.46875vw; /* 70/1280 */
+    height: 5.46875vw; /* 70/1280 */
+    background-size: 0.625vw 2.34375vw; /* 8&30/1280 */
+}
+footer .footer_info .samsung {
+    margin-right: 1.09375vw; /* 14/1280 */
+}
+footer .footer_info .samsung img {
+    width: 7.109375vw; /* 91/1280 */
+}
+footer .footer_info span {
+    font-size: 1.09375vw; /* 14/1280 */
+}
+
+} /* 반응형 데스크탑 end */
+
+/* 고정형 데스크탑 start */
+@media screen and (min-width:1281px) {
+body {
+    border: 5px solid blue;
+}
+header .inner .m_menu {
+    display: none;
+}
+} /* 고정형 데스크탑 end */
